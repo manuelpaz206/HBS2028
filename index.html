@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HBS Class of 2028 — Directory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crimson: #A51C30;
+    --crimson-light: #C9384A;
+    --crimson-pale: #F9ECEE;
+    --gold: #C9A84C;
+    --dark: #1A1A1A;
+    --mid: #4A4A4A;
+    --muted: #8A8A8A;
+    --border: #E8E0D8;
+    --bg: #FAF8F5;
+    --white: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --shadow: 0 2px 12px rgba(26,26,26,0.07);
+    --shadow-hover: 0 8px 32px rgba(165,28,48,0.13);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--dark);
+    color: var(--white);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .crest {
+    width: 38px;
+    height: 38px;
+    background: var(--crimson);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+
+  .brand-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+  }
+
+  .brand-text span {
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .header-count {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+
+  .header-count strong {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ── CONTROLS ── */
+  .controls-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 74px;
+    z-index: 90;
+  }
+
+  .controls-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .search-wrap {
+    flex: 1;
+    min-width: 220px;
+    position: relative;
+  }
+
+  .search-wrap svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+
+  #search {
+    width: 100%;
+    padding: 9px 12px 9px 36px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    background: var(--bg);
+    color: var(--dark);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  #search:focus {
+    border-color: var(--crimson);
+    box-shadow: 0 0 0 3px rgba(165,28,48,0.08);
+    background: white;
+  }
+
+  select {
+    padding: 9px 32px 9px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238A8A8A'/%3E%3C/svg%3E") no-repeat right 10px center;
+    -webkit-appearance: none;
+    appearance: none;
+    color: var(--dark);
+    cursor: pointer;
+    transition: border-color 0.2s;
+    outline: none;
+    white-space: nowrap;
+  }
+
+  select:focus {
+    border-color: var(--crimson);
+    box-shadow: 0 0 0 3px rgba(165,28,48,0.08);
+  }
+
+  .clear-btn {
+    padding: 9px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .clear-btn:hover {
+    border-color: var(--crimson);
+    color: var(--crimson);
+  }
+
+  .view-toggle {
+    display: flex;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .view-btn {
+    padding: 8px 12px;
+    background: var(--bg);
+    border: none;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+  }
+
+  .view-btn.active {
+    background: var(--dark);
+    color: white;
+  }
+
+  /* ── RESULTS BAR ── */
+  .results-bar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 32px 0;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  .results-bar strong { color: var(--dark); }
+
+  /* ── GRID ── */
+  .grid-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 32px 48px;
+  }
+
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  #grid.list-view {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: default;
+    transition: box-shadow 0.25s, transform 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(165,28,48,0.2);
+    transform: translateY(-2px);
+  }
+
+  .card-accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--crimson), var(--gold));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .card:hover .card-accent { opacity: 1; }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--crimson-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--crimson);
+    flex-shrink: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .card-name-block { flex: 1; min-width: 0; }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .card-role {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-company {
+    font-weight: 600;
+    color: var(--mid);
+  }
+
+  .card-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .chip {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .chip-loc {
+    background: #EEF2FF;
+    color: #4F46E5;
+  }
+
+  .chip-origin {
+    background: #FEF3C7;
+    color: #92400E;
+  }
+
+  .chip-industry {
+    background: #ECFDF5;
+    color: #065F46;
+  }
+
+  .chip-program {
+    background: var(--crimson-pale);
+    color: var(--crimson);
+    font-weight: 600;
+  }
+
+  .card-bio {
+    font-size: 12.5px;
+    color: var(--mid);
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  .card-edu {
+    font-size: 11.5px;
+    color: var(--muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+  }
+
+  .linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    background: #0A66C2;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    flex-shrink: 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .linkedin-btn:hover {
+    background: #084E96;
+    transform: translateY(-1px);
+  }
+
+  /* ── LIST VIEW ── */
+  #grid.list-view .card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 8px;
+  }
+
+  #grid.list-view .card:hover { transform: none; }
+  #grid.list-view .card-accent { display: none; }
+  #grid.list-view .avatar { width: 38px; height: 38px; font-size: 14px; border-radius: 8px; }
+  #grid.list-view .card-header { margin-bottom: 0; flex: 1; min-width: 0; }
+  #grid.list-view .card-name { font-size: 14px; }
+  #grid.list-view .card-chips { display: none; }
+  #grid.list-view .card-bio { display: none; }
+  #grid.list-view .card-footer { flex-shrink: 0; }
+  #grid.list-view .card-edu { display: none; }
+
+  /* ── EMPTY STATE ── */
+  #empty {
+    display: none;
+    text-align: center;
+    padding: 80px 32px;
+    color: var(--muted);
+  }
+
+  #empty h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--mid);
+    margin-bottom: 8px;
+  }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,26,26,0.55);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: white;
+    border-radius: 16px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+    animation: modalIn 0.25s ease;
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .modal-header {
+    background: var(--dark);
+    color: white;
+    padding: 24px 28px;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .modal-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: var(--crimson);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    flex-shrink: 0;
+    margin-bottom: 14px;
+  }
+
+  .modal-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .modal-title {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+
+  .modal-close {
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+
+  .modal-close:hover { background: rgba(255,255,255,0.2); }
+
+  .modal-body { padding: 24px 28px; }
+
+  .modal-section {
+    margin-bottom: 20px;
+  }
+
+  .modal-section h4 {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .modal-section p {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  .modal-section .big { font-size: 15px; color: var(--dark); font-weight: 500; }
+
+  .modal-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .modal-actions a {
+    flex: 1;
+    text-align: center;
+    padding: 11px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13.5px;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-linkedin {
+    background: #0A66C2;
+    color: white;
+  }
+  .btn-linkedin:hover { background: #084E96; }
+
+  .btn-secondary {
+    background: var(--bg);
+    color: var(--mid);
+    border: 1.5px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--crimson); color: var(--crimson); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 14px 16px; flex-wrap: wrap; gap: 8px; }
+    .controls-inner { padding: 12px 16px; gap: 8px; }
+    .grid-wrap { padding: 12px 16px 40px; }
+    .results-bar { padding: 10px 16px 0; }
+    #grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="crest">H</div>
+      <div class="brand-text">
+        <h1>Class of 2028</h1>
+        <span>Harvard Business School</span>
+      </div>
+    </div>
+    <div class="header-count">
+      Showing <strong id="shown-count">0</strong> of <strong id="total-count">0</strong> classmates
+    </div>
+  </div>
+</header>
+
+<div class="controls-bar">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search" type="text" placeholder="Search name, company, school, role…" autocomplete="off" />
+    </div>
+    <select id="filter-function">
+      <option value="">All Functions</option>
+    </select>
+    <select id="filter-location">
+      <option value="">All Locations</option>
+    </select>
+    <select id="filter-interests">
+      <option value="">All Interests</option>
+    </select>
+    <select id="filter-program">
+      <option value="">All Programs</option>
+      <option value="mba">MBA</option>
+      <option value="msmba">MS/MBA</option>
+    </select>
+    <button class="clear-btn" onclick="clearFilters()">Clear</button>
+    <div class="view-toggle">
+      <button class="view-btn active" id="btn-grid" onclick="setView('grid')" title="Grid">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      </button>
+      <button class="view-btn" id="btn-list" onclick="setView('list')" title="List">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="results-bar" id="results-bar"></div>
+
+<div class="grid-wrap">
+  <div id="grid"></div>
+  <div id="empty">
+    <h3>No results found</h3>
+    <p>Try adjusting your search or clearing the filters.</p>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box">
+    <div class="modal-header" id="modal-header"></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// DATA — add new members to this array following the same schema
+// ─────────────────────────────────────────────────────────────
+const MEMBERS = [
+  { id:3,  name:"Philip Liu", undergrad:"Duke University (Mechanical Engineering)", company:"NBCUniversal Media", role:"AI Product Owner", origin:"Austin, TX", location:"NYC", linkedin:"https://www.linkedin.com/in/philip-w-liu/", bio:"AI Product Owner at NBCUniversal Media, studied mechanical engineering at Duke. Originally from Austin, TX.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:4,  name:"Mark Shklar", undergrad:"The Hebrew University of Jerusalem (Intl Relations & Political Science)", company:"Ness Technologies", role:"Technical Product Manager", origin:"Israel", location:"Israel", linkedin:"https://linkedin.com/in/mark-shklar-a22250244", bio:"Technical Product Manager at Ness Technologies. Studied International Relations and Political Science.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:5,  name:"Preet Khalsa", undergrad:"Birla Institute of Technology and Science, Pilani", company:"EQT Ventures", role:"VP", origin:"India", location:"London", linkedin:"https://www.linkedin.com/in/psk97/", bio:"Product manager turned investor, VP at EQT Ventures investing in Europe and US. Originally from India.", hobbies:"Tennis, padel, pickleball, long walks, poker", function_:"Venture Capital", program:"mba" },
+  { id:6,  name:"Gabriel Almeida Prado", undergrad:"Insper / Harvard (Cognitive Science)", company:"Lastro", role:"Chief Product Officer", origin:"São Paulo, Brazil", location:"São Paulo, Brazil", linkedin:"https://www.linkedin.com/in/pradogabriel/", bio:"CPO at Lastro, an AI startup in São Paulo. Also invests in early-stage Brazilian startups.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:7,  name:"Fernando Armella", undergrad:"Economics", company:"Draftea", role:"Chief of Staff & Head of Finance", origin:"Mexico City", location:"Mexico City", linkedin:"https://www.linkedin.com/in/fernando-armella-3b1887181", bio:"Chief of Staff and Head of Finance at Draftea, a Sequoia-backed online sports betting startup.", hobbies:"", function_:"Finance / Strategy", program:"mba" },
+  { id:8,  name:"Daffodil (Daffy) Dhayaa", undergrad:"Oxford University (Engineering)", company:"BCG", role:"Consultant", origin:"London", location:"NYC", linkedin:"", bio:"Oxford Engineering grad, BCG consultant in TMT space focused on GenAI/AI design, build and transformations.", hobbies:"", function_:"Consulting", program:"mba" },
+  { id:9,  name:"Tyler Fohrman", undergrad:"", company:"Glasswing Ventures", role:"Chief of Staff", origin:"Florida", location:"Boston", linkedin:"https://www.linkedin.com/in/tyler-fohrman/", bio:"Chief of Staff at Glasswing Ventures, investing in early-stage AI and frontier technologies.", hobbies:"", function_:"Venture Capital", program:"mba" },
+  { id:10, name:"Maximum Waller", undergrad:"Oklahoma State University", company:"The Capstreet Group", role:"Private Equity", origin:"Tulsa, OK", location:"Houston", linkedin:"https://www.linkedin.com/in/maximum-waller-78982a176", bio:"Energy investment banking background, now focuses on software and industrials private equity.", hobbies:"", function_:"Private Equity", program:"mba" },
+  { id:11, name:"Conor McDonald", undergrad:"UCLA (Russian and Political Science)", company:"US Army", role:"Intelligence Officer", origin:"Boston", location:"Colorado", linkedin:"https://www.linkedin.com/in/conor-mcdonald-44030079", bio:"US Army intelligence officer supporting NATO allies across Europe. Looking to pivot to strategy consulting.", hobbies:"", function_:"Military / Government", program:"mba" },
+  { id:12, name:"Colleen West", undergrad:"Worcester Polytechnic Institute (Chemical Engineering)", company:"Thermo Fisher Scientific", role:"Technical Operations Lead", origin:"Greater Boston", location:"Greater Boston", linkedin:"", bio:"Leads technical operations team on bioprocess purification tools at Thermo Fisher Scientific.", hobbies:"Gym, soccer, mountain activities", function_:"Operations", program:"mba" },
+  { id:13, name:"Pablo Demederos Almaraz", undergrad:"Universidad Iberoamericana (Chemical Engineering)", company:"Covalto", role:"Private Credit", origin:"Mexico City", location:"Mexico City", linkedin:"https://www.linkedin.com/in/pablo-demederos-712874136/", bio:"IB and VC background, currently in Private Credit financing fintech lenders.", hobbies:"", function_:"Finance / Strategy", program:"mba" },
+  { id:14, name:"Sajini Rangana", undergrad:"University of British Columbia (International Economics)", company:"TikTok", role:"Global Strategist", origin:"Vancouver", location:"London", linkedin:"", bio:"Global Strategist at TikTok. Studied International Economics at UBC.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:15, name:"Matt Critchley", undergrad:"Naval Academy", company:"US Navy", role:"Submarine Officer", origin:"Morristown, NJ", location:"Morristown, NJ", linkedin:"https://www.linkedin.com/in/matthew--critchley", bio:"Naval Academy grad, submarine officer for 6 years. Huge NY sports fan.", hobbies:"Golf, NY sports", function_:"Military / Government", program:"mba" },
+  { id:16, name:"Henrik Cox", undergrad:"Duke University (Mechanical Engineering)", company:"OpenOrigins", role:"Solutions Architect", origin:"Unknown", location:"London", linkedin:"https://www.linkedin.com/in/henrikcox/", bio:"Solutions Architect at OpenOrigins. Previously in nonprofit space building AI for wildlife conservation.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:17, name:"Sabrina Zafar", undergrad:"Carnegie Mellon University (Statistics & Machine Learning)", company:"Mast Investments", role:"Portfolio Analyst", origin:"Northern Virginia", location:"New York", linkedin:"https://www.linkedin.com/in/sabrinazafar/", bio:"Quantitative asset management background at Credit Suisse, UBS. Portfolio analyst at Mast Investments.", hobbies:"Restaurants, gym, film", function_:"Finance / Strategy", program:"mba" },
+  { id:18, name:"Franco Elvis Lapegüe", undergrad:"UADE", company:"Mercado Libre", role:"", origin:"Buenos Aires, Argentina", location:"Buenos Aires, Argentina", linkedin:"https://ar.linkedin.com/in/franco-lapegue", bio:"Joining from Buenos Aires, Argentina. Works at Mercado Libre.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:19, name:"Armand Ledanois", undergrad:"INSEAD (Engineering)", company:"Johnson & Johnson", role:"Engineer", origin:"France", location:"Paris", linkedin:"https://www.linkedin.com/in/armand-ledanois/", bio:"Engineering background, building medical devices at J&J. Led development for new cancer therapies.", hobbies:"", function_:"Healthcare", program:"mba" },
+  { id:20, name:"Goutham Challa", undergrad:"Graduate degree in Engineering", company:"Pharmaceutical company", role:"Engineering Leader", origin:"India", location:"US", linkedin:"https://www.linkedin.com/in/gouthamchalla", bio:"Engineering leader implementing a carbon neutral program at a pharmaceutical company. Sustainability and decarbonization space.", hobbies:"Reading, cooking, national parks", function_:"Healthcare", program:"mba" },
+  { id:21, name:"Aniruddh Hari (Ani)", undergrad:"MIT", company:"Shopify", role:"Product Data Scientist", origin:"Bangalore", location:"Vancouver", linkedin:"https://www.linkedin.com/in/anihari", bio:"Product data science at Shopify. Previously at early-stage mobility startups. Lived in Cambridge 2020–2022.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:22, name:"Zane Sun", undergrad:"Vanderbilt University", company:"Vanderbilt University Endowment", role:"Investment Analyst", origin:"Beijing", location:"Nashville, TN", linkedin:"https://www.linkedin.com/in/zanesun/", bio:"Investment analyst at Vanderbilt's endowment, covering private market investments.", hobbies:"", function_:"Finance / Strategy", program:"mba" },
+  { id:23, name:"Vivian Li", undergrad:"Cornell University (Hotel Administration)", company:"PIMCO", role:"Corporate Strategy", origin:"Vancouver, Canada", location:"Newport Beach / OC", linkedin:"https://www.linkedin.com/in/vivian-zw-li/", bio:"Investment management at PIMCO. Previously covered Real Estate debt, now focused on corporate strategy.", hobbies:"", function_:"Finance / Strategy", program:"mba" },
+  { id:24, name:"Parth Pimparkar", undergrad:"", company:"Sarvam AI", role:"", origin:"Mumbai, India", location:"Mumbai, India", linkedin:"https://www.linkedin.com/in/parth-pimparkar/", bio:"Helped build India's first LLM at Sarvam AI. Previously Oracle Cloud Infrastructure and AI researcher.", hobbies:"F1, chess, tennis, cricket, Xbox, philosophy, breweries, hiking", function_:"Tech / Product", program:"mba" },
+  { id:25, name:"Anusha Datta", undergrad:"Nanyang Technological University (Computer Science)", company:"J.P. Morgan", role:"Software Engineer", origin:"India", location:"Singapore", linkedin:"https://www.linkedin.com/in/anusha-datta/", bio:"Software Engineer at J.P. Morgan. CS degree from NTU. Based in Singapore for 7 years.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:26, name:"Arnav Mohan Gupta", undergrad:"Ashoka University (Economics, Finance & Entrepreneurship)", company:"Merck (MSD) Asia Pacific", role:"Lead Innovation Strategy", origin:"India", location:"Singapore & Mumbai", linkedin:"https://www.linkedin.com/in/arnav-mohan-gupta-15755b77", bio:"Leads Innovation Strategy at Merck MSD Asia Pacific — VC-style investments and new ventures. Prev Bertelsmann India.", hobbies:"Teaching English, active sports", function_:"Healthcare", program:"mba" },
+  { id:27, name:"Nikolas Leuthold", undergrad:"LSE, Munich & London (Finance and Economics)", company:"Bain & Company", role:"Consultant, PE Group", origin:"Lake of Constance", location:"Zürich", linkedin:"https://www.linkedin.com/in/nikolas-leuthold-12255a184/", bio:"Bain consultant in PE Group, focusing on biotech and software ventures. Based in Zürich.", hobbies:"Tennis, hiking in the Alps", function_:"Consulting", program:"mba" },
+  { id:28, name:"Blair Anaman Williams", undergrad:"MIT", company:"The Global Fund", role:"Senior Associate Strategist", origin:"Maryland & Accra, Ghana", location:"Geneva, Switzerland", linkedin:"https://www.linkedin.com/in/blair-anaman-williams-059aa3145/", bio:"Strategist at a global health organization in Geneva. Split childhood between Maryland and Accra, Ghana.", hobbies:"", function_:"Non-profit / Impact", program:"mba" },
+  { id:29, name:"Conall Molloy", undergrad:"United States Military Academy at West Point", company:"US Army", role:"Intelligence Officer", origin:"Maine", location:"Washington D.C.", linkedin:"", bio:"Army intelligence officer based in Washington D.C. West Point graduate.", hobbies:"Cooking, traveling, scuba diving", function_:"Military / Government", program:"mba" },
+  { id:30, name:"Berke Sevimsavur", undergrad:"Sabanci University (Industrial Engineering)", company:"McKinsey & Company", role:"Consultant", origin:"Istanbul, Turkey", location:"Istanbul, Turkey", linkedin:"https://www.linkedin.com/in/berkesevimsavur", bio:"McKinsey consultant focused on banking and GEM. Based in Istanbul.", hobbies:"Sailing, scuba diving", function_:"Consulting", program:"mba" },
+  { id:31, name:"Joaquin Maroto", undergrad:"", company:"AI-based software company", role:"Software Engineer / Co-founder", origin:"Spain", location:"Madrid", linkedin:"https://www.linkedin.com/in/joaquinmaroto", bio:"Software engineer co-founding an AI-based software company in Madrid. Joining MS/MBA Engineering program.", hobbies:"Golf, scuba diving", function_:"Tech / Product", program:"msmba" },
+  { id:32, name:"Kennedy Jarvis", undergrad:"Auburn University", company:"Stride Consumer Partners", role:"Investor", origin:"Nashville, TN", location:"Boston", linkedin:"https://www.linkedin.com/in/kennedyjarvis/", bio:"Consumer growth investor at Stride Consumer Partners. Previously investment banking at Moelis in NYC.", hobbies:"Baking, concerts, sporting events", function_:"Private Equity", program:"mba" },
+  { id:33, name:"David Ding", undergrad:"Columbia Business School", company:"Amazon Web Services (AWS)", role:"Customer Solutions Manager", origin:"Chicago / LA", location:"NYC", linkedin:"https://www.linkedin.com/in/daviddingaws/", bio:"AWS Customer Solutions Manager supporting JP Morgan Chase migrations and Gen AI strategy. Also manages family office.", hobbies:"Pickleball, poker, city life", function_:"Tech / Product", program:"mba" },
+  { id:34, name:"Eliza Hamel-Platerink", undergrad:"UC Berkeley (Applied Math / Data Science)", company:"Oracle", role:"AI Product Strategy Lead", origin:"Amsterdam / London / SF", location:"NYC", linkedin:"", bio:"Leads internal AI product strategy and implementation at Oracle. Dual degree in applied math/data science from Berkeley.", hobbies:"Hot yoga, dinner parties, skiing, art, fashion, photography", function_:"Tech / Product", program:"mba" },
+  { id:35, name:"Emily Malech", undergrad:"Claremont McKenna College (Econ)", company:"Deloitte", role:"Consultant", origin:"Portland, Oregon", location:"NYC", linkedin:"https://www.linkedin.com/in/emilymalech", bio:"Deloitte consultant in Consumer space (airline, hospitality). Previously early employee at a Series A tech startup.", hobbies:"", function_:"Consulting", program:"mba" },
+  { id:36, name:"Alessandra Rizzo", undergrad:"ESSEC Business School", company:"Christian Dior Couture", role:"Global Product Strategy", origin:"Italy", location:"Paris", linkedin:"https://www.linkedin.com/in/rizzoalessandra", bio:"Manages global product strategy for leather goods at Christian Dior. Oversees product lifecycle from creation to distribution.", hobbies:"Tennis, music, good food", function_:"Consumer / Retail", program:"mba" },
+  { id:37, name:"Fulya Akkaya", undergrad:"Boğaziçi Üniversitesi (Economics & Mathematics)", company:"McKinsey & Company", role:"Consultant", origin:"Unknown", location:"Istanbul", linkedin:"https://www.linkedin.com/in/fulya-akkaya", bio:"McKinsey consultant based in Istanbul. Studied Economics and Mathematics.", hobbies:"Traveling, piano", function_:"Consulting", program:"mba" },
+  { id:38, name:"Soraya Quiroga Camacho", undergrad:"Universidad de Los Andes", company:"Nido", role:"COO", origin:"Bogotá, Colombia", location:"Madrid, Spain", linkedin:"https://www.linkedin.com/in/soraya-quiroga-camacho/", bio:"COO at Nido, a climate tech startup. Originally from Bogotá, also lived in Mexico and the US.", hobbies:"", function_:"Non-profit / Impact", program:"mba" },
+  { id:39, name:"Andrea Best", undergrad:"Universidad del Pacífico (PE)", company:"Banco de Crédito BCP", role:"Banking", origin:"Lima, Peru", location:"Lima, Peru", linkedin:"https://www.linkedin.com/in/andrea-best-2b1619171/", bio:"Banking professional focused on asset, liability, and solvency management at BCP.", hobbies:"", function_:"Finance / Strategy", program:"mba" },
+  { id:40, name:"Alexander Sun", undergrad:"Northwestern University / Columbia University", company:"PwC Strategy&", role:"Consultant", origin:"Newport Beach, CA", location:"NYC", linkedin:"https://www.linkedin.com/in/alexander-sun", bio:"PwC Strategy& consultant executing M&A commercial due diligence for PE funds in healthcare.", hobbies:"", function_:"Consulting", program:"mba" },
+  { id:41, name:"Sanika Bhave", undergrad:"", company:"Lithium-ion battery recycler", role:"Strategy & Government Affairs", origin:"Dallas-Fort Worth", location:"Austin", linkedin:"https://www.linkedin.com/in/sanikabhave/", bio:"Leads strategy & government affairs at a lithium-ion battery recycler. Previously led Seed-Series A at TX's most active VC.", hobbies:"Reading, thrifting, hiking", function_:"Non-profit / Impact", program:"mba" },
+  { id:42, name:"Tasneem Omar Ava", undergrad:"University of Toronto", company:"TD", role:"Product Manager", origin:"Bangladesh", location:"Toronto", linkedin:"https://www.linkedin.com/in/tasneemava/", bio:"Product Manager for Merchant Services at TD, supporting Canadian SMBs. Also mentors newcomers and leads family charity.", hobbies:"Mentoring, travel", function_:"Tech / Product", program:"mba" },
+  { id:43, name:"Aikaterini Vlachou", undergrad:"Technical University of Munich (Mechanical Engineering)", company:"McKinsey & Company", role:"Consultant", origin:"Greece", location:"Munich", linkedin:"https://www.linkedin.com/in/aikaterini-vlachou-107702223", bio:"Mechanical engineer and McKinsey consultant based in Munich.", hobbies:"", function_:"Consulting", program:"mba" },
+  { id:44, name:"Marc Mefleh", undergrad:"American University of Beirut", company:"Bain & Company", role:"Consultant", origin:"Lebanon / France", location:"Dubai & Riyadh", linkedin:"https://www.linkedin.com/in/marc-mefleh", bio:"Bain consultant in PE and sustainability practices. Based between Dubai and Riyadh.", hobbies:"", function_:"Consulting", program:"mba" },
+  { id:45, name:"Marcelo Rondoy", undergrad:"Universidad del Pacífico (Economics)", company:"Central Bank of Peru / BCRP", role:"Portfolio Manager", origin:"Peru", location:"Peru", linkedin:"https://www.linkedin.com/in/marcelorondoyl/", bio:"Economist and Portfolio Manager at the Central Bank of Peru.", hobbies:"", function_:"Finance / Strategy", program:"mba" },
+  { id:46, name:"Chad Cerutti", undergrad:"University of Michigan", company:"Northrop Grumman", role:"Systems Engineer", origin:"Ft Lauderdale, FL", location:"Washington DC", linkedin:"", bio:"Systems engineer building satellites for private and public sectors at Northrop Grumman. Joining MS/MBA program.", hobbies:"Thrifting, college football, volleyball, concerts", function_:"Military / Government", program:"msmba" },
+  { id:47, name:"Madison Eaton", undergrad:"University of Michigan", company:"Boston Consulting Group (BCG)", role:"Consultant", origin:"Michigan", location:"Detroit", linkedin:"", bio:"BCG consultant on digital and product builds across mobility and transportation. Ran track at Michigan.", hobbies:"Staying active, food and wine, traveling", function_:"Consulting", program:"mba" },
+  { id:48, name:"Julia Ferrara", undergrad:"University of Texas at Austin", company:"Chevron", role:"Finance Professional", origin:"Dallas", location:"Houston, Texas", linkedin:"https://www.linkedin.com/in/juliaferrara/", bio:"Finance professional at Chevron, based in Houston.", hobbies:"", function_:"Finance / Strategy", program:"mba" },
+  { id:49, name:"Wills Rutherford", undergrad:"Rice University (Mechanical Engineering)", company:"Manufacturing tech startup", role:"", origin:"Dallas, TX", location:"NYC", linkedin:"http://www.linkedin.com/in/wwr", bio:"Mechanical engineering degree from Rice. Worked in 50+ different factories via manufacturing tech startup in NYC.", hobbies:"Running, hiking, skiing, climbing, golf", function_:"Operations", program:"mba" },
+  { id:50, name:"Bar Rubin", undergrad:"HEC Paris", company:"Rabo Investments / Rabobank", role:"VC Investor", origin:"Tel Aviv", location:"Netherlands", linkedin:"https://www.linkedin.com/in/barrubin/", bio:"Venture capital investor focusing on food/agriculture tech. Lived in Amsterdam, California, NY, Shanghai, Paris.", hobbies:"Pilates, skiing, scuba diving, cooking, traveling", function_:"Venture Capital", program:"mba" },
+  { id:51, name:"Zamilan Batbayar", undergrad:"University of Minnesota (Finance & MIS)", company:"International Finance Corporation (World Bank Group)", role:"Investment Support", origin:"Ulaanbaatar, Mongolia", location:"Ulaanbaatar, Mongolia", linkedin:"https://www.linkedin.com/in/zamilan-batbayar/", bio:"Supports investments across emerging markets at IFC (World Bank Group). From Mongolia.", hobbies:"Basketball, volleyball, wrestling", function_:"Finance / Strategy", program:"mba" },
+  { id:52, name:"Tiger Chen", undergrad:"Princeton University (Operations Research & Financial Engineering)", company:"Private Equity", role:"", origin:"Unknown", location:"NYC", linkedin:"https://www.linkedin.com/in/tiger-chen-693048154/", bio:"Spent first 5 years in Tech Investment Banking and PE (Value-Oriented Tech). Attending with fiancée Sonya Liu.", hobbies:"", function_:"Private Equity", program:"mba" },
+  { id:53, name:"Sonya Liu", undergrad:"Georgetown University", company:"SER Capital Partners", role:"PE Investor", origin:"St. Louis", location:"NYC", linkedin:"https://www.linkedin.com/in/sonya-liu-54374613a/", bio:"PE investor at SER Capital specializing in grid-scale and industrial batteries. Previously IB at Goldman doing FIG M&A.", hobbies:"Food, painting, shopping, travel", function_:"Private Equity", program:"mba" },
+  { id:54, name:"Shalaka Madge", undergrad:"Princeton (Mech & Aero) / Purdue (Aero/Astro Masters)", company:"BAE Systems", role:"Senior Engineer", origin:"New Jersey", location:"Minneapolis", linkedin:"https://www.linkedin.com/in/shalaka-madge/", bio:"Senior engineer at BAE Systems on future-tech products. Recently completed work on a counter-drone system.", hobbies:"Running, guitar, Taco Bell", function_:"Military / Government", program:"mba" },
+  { id:55, name:"Fernando Morales", undergrad:"University of Delaware (Chemical Engineering)", company:"US Department of Defense", role:"Senior Engineer", origin:"New Jersey / Puerto Rico", location:"NYC", linkedin:"https://www.linkedin.com/in/fmorales0/", bio:"Civilian chemical engineer for the DOD supporting the US Navy on energy and fuels.", hobbies:"Soccer, hiking, travel", function_:"Military / Government", program:"mba" },
+  { id:56, name:"Chris Chen", undergrad:"Harvard University", company:"EY-Parthenon", role:"Strategy Consultant", origin:"Seattle", location:"Boston", linkedin:"https://www.linkedin.com/in/cbchen/", bio:"Strategy consulting at EY-Parthenon in digital infrastructure (data centers, fiber, cell towers, satellites).", hobbies:"Running (marathons), skiing, cooking", function_:"Consulting", program:"mba" },
+  { id:57, name:"Jacob Robleski", undergrad:"Butler University (Accounting & Finance)", company:"Eli Lilly", role:"Finance", origin:"Chicago suburbs", location:"Indianapolis", linkedin:"https://www.linkedin.com/in/jacob-robleski", bio:"FP&A support for R&D at Eli Lilly. Qualified for Boston Marathon at Chicago.", hobbies:"Running (marathons)", function_:"Healthcare", program:"mba" },
+  { id:58, name:"Singrhu Poltanawasit", undergrad:"Rice University (Mechanical Engineering)", company:"Subsea oil and gas industry", role:"", origin:"Thailand", location:"Thailand", linkedin:"https://www.linkedin.com/in/singrhu", bio:"Mechanical engineering from Rice, working in subsea oil and gas for 2.5 years.", hobbies:"Cooking, golf, scuba diving, restaurants", function_:"Energy", program:"mba" },
+  { id:59, name:"Mohammed Alghaffari", undergrad:"University of Maryland", company:"Salesforce", role:"Tech Consultant", origin:"Iraq & Jordan", location:"Washington DC", linkedin:"https://www.linkedin.com/in/alghaffarimohammed/", bio:"Tech consulting at Salesforce. Started at Deloitte, went through startup world. Hopes to build startup at HBS.", hobbies:"Philosophy, F45 workouts", function_:"Consulting", program:"mba" },
+  { id:60, name:"Eric Bailey", undergrad:"", company:"Capital Group", role:"High Yield Analyst", origin:"Texas", location:"Los Angeles", linkedin:"https://www.linkedin.com/in/eric-t-bailey", bio:"Covers high yield tech and healthcare companies at Capital Group.", hobbies:"Pickleball, hiking, board games, food/wine", function_:"Finance / Strategy", program:"mba" },
+  { id:61, name:"Vaishall Pradeepkumar", undergrad:"University of Oxford (Maths)", company:"Accenture", role:"Data Scientist", origin:"Sydney / Houston", location:"SF Bay Area", linkedin:"https://www.linkedin.com/in/vaishall-pradeepkumar/", bio:"Data scientist in tech consulting at Accenture. Born in Sydney, grew up in Houston, studied maths at Oxford.", hobbies:"Soccer, singing, new cuisines", function_:"Consulting", program:"mba" },
+  { id:62, name:"Duc Nguyen", undergrad:"Foreign Trade University", company:"Boston Consulting Group (BCG)", role:"Consultant", origin:"Vietnam", location:"Ho Chi Minh City", linkedin:"https://www.linkedin.com/in/nguyenptduc/", bio:"BCG consultant on projects across Southeast Asia. Part-time TikTok content creator.", hobbies:"Traveling, dancing, pottery", function_:"Consulting", program:"mba" },
+  { id:63, name:"Katherine Howard", undergrad:"Syracuse University (Music Business)", company:"Warner Music Group", role:"Global Strategy & Operations", origin:"Miami", location:"Los Angeles", linkedin:"https://www.linkedin.com/in/katherinehoward", bio:"Global strategy & operations at Warner Music Group. Studied music business at Syracuse.", hobbies:"Shows, gym, biographies, travel", function_:"Consumer / Retail", program:"mba" },
+  { id:64, name:"Shrishti Ahuja", undergrad:"Western University / NYU (Masters in Biotech)", company:"Schrödinger", role:"Strategy Team", origin:"Toronto / India / Kenya", location:"NYC", linkedin:"https://www.linkedin.com/in/shrishti-a-20a546102/", bio:"5 years in strategy at Schrödinger, an AI biotech company. Grew up in Kenya, Toronto, now NYC.", hobbies:"Traveling, swimming, dancing", function_:"Healthcare", program:"mba" },
+  { id:65, name:"Ciara Blackston", undergrad:"University of Virginia", company:"PepsiCo", role:"Manager, M&A and VC", origin:"Northern Virginia", location:"NYC", linkedin:"", bio:"Manager in PepsiCo's M&A and VC team. Started career in investment banking and private equity.", hobbies:"Art galleries, UFC, sewing, floral design", function_:"Finance / Strategy", program:"mba" },
+  { id:66, name:"Rhea Mehta", undergrad:"Wellesley College (Economics)", company:"BofA", role:"Healthcare Investment Banker", origin:"Delhi, India", location:"NYC", linkedin:"https://linkedin.com/in/mehtarhea", bio:"Healthcare investment banker at BofA in NYC, focused on medical device companies.", hobbies:"", function_:"Finance / Strategy", program:"mba" },
+  { id:67, name:"Mehul Thukral", undergrad:"NYU (Math)", company:"IBM", role:"Data Scientist", origin:"Delhi, India", location:"New York", linkedin:"https://www.linkedin.com/in/mehul-thukral", bio:"Data scientist at IBM leading AI transformation across the company.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:68, name:"Benjamín Prado García", undergrad:"Pontificia Universidad Católica de Chile", company:"Aviron Investments", role:"PE Associate", origin:"Santiago, Chile", location:"Santiago, Chile", linkedin:"https://www.linkedin.com/in/benjaprado/", bio:"Private equity investor at Aviron Investments. Previously investment banking at Credicorp Capital.", hobbies:"Golf, tennis", function_:"Private Equity", program:"mba" },
+  { id:69, name:"Tarini Ramesh", undergrad:"UNC Chapel Hill (CS & Economics)", company:"Microsoft", role:"Software Engineer", origin:"North Carolina", location:"Seattle", linkedin:"https://www.linkedin.com/in/rameshtarini", bio:"Software engineer at Microsoft in data engineering. Studied CS and economics at UNC.", hobbies:"Ice skating, legos, lifting, rom coms", function_:"Tech / Product", program:"mba" },
+  { id:70, name:"Alqaim Lalani", undergrad:"Columbia University", company:"McKinsey & Company", role:"Management Consultant", origin:"Dubai / Toronto / Tanzania", location:"Nairobi", linkedin:"https://www.linkedin.com/in/alqaimlalani", bio:"McKinsey consultant on strategy and transformation. Grew up between Dubai, Toronto, and Dar es Salaam.", hobbies:"Premier League, F1, food, staying active", function_:"Consulting", program:"mba" },
+  { id:71, name:"Leticia Imark", undergrad:"Universidade Estadual de Campinas (Engineering)", company:"Accenture", role:"Strategy Consultant", origin:"Southern Brazil", location:"São Paulo", linkedin:"https://www.linkedin.com/in/leticiaimark/", bio:"Strategy consultant at Accenture specializing in healthcare transformation. Engineering background.", hobbies:"Music, long runs, cooking", function_:"Consulting", program:"mba" },
+  { id:72, name:"William Pascocello", undergrad:"Cornell University", company:"Johnson & Johnson", role:"Finance", origin:"Westchester, NY", location:"New Jersey", linkedin:"", bio:"Finance at Johnson & Johnson, recently moved into supply chain finance from corporate treasury.", hobbies:"Hiking, restaurants, history", function_:"Healthcare", program:"mba" },
+  { id:73, name:"Jorge Martinez Rodriguez", undergrad:"", company:"Digital bank (McKinsey secondment)", role:"AI Strategy Lead", origin:"Mexico", location:"Mexico", linkedin:"https://linkedin.com/in/jorgelmartinezr", bio:"3 years at McKinsey, now on secondment leading AI strategy and adoption at a digital bank.", hobbies:"Basketball, fiction, salsa dancing", function_:"Tech / Product", program:"mba" },
+  { id:74, name:"Krishna Menon", undergrad:"Columbia University (Statistics)", company:"Sony Music Entertainment", role:"Tech / Operations", origin:"Tampa, FL", location:"NYC", linkedin:"https://www.linkedin.com/in/krishna-menon-/", bio:"Works on tech side of music industry at Sony Music (streaming, licensing, studio ops). Passionate about music/entertainment.", hobbies:"Reality TV, reading 100 books/year, gaming", function_:"Consumer / Retail", program:"mba" },
+  { id:75, name:"Shivish Makkar", undergrad:"University of Wisconsin-Madison (CS & Economics)", company:"Venture Haven LLC", role:"Product Manager / Founder", origin:"Delhi", location:"SF", linkedin:"https://www.linkedin.com/in/shmakkar/", bio:"PM at Zynga and StubHub. Now all-in on entrepreneurship building consumer micro-SaaS.", hobbies:"Lifting, running, hiking, pickleball, traveling, FIFA", function_:"Tech / Product", program:"mba" },
+  { id:76, name:"Simran Khokha", undergrad:"NTU Singapore / TUM Germany (Semiconductor Chip Design)", company:"Infineon Technologies", role:"Product Manager", origin:"India", location:"Germany", linkedin:"https://www.linkedin.com/in/simran-khokha/", bio:"PM for automotive chips at Infineon Technologies. Dual graduate degree in semiconductor chip design. Black belt in Karate.", hobbies:"Travelling, art & culture, Karate", function_:"Tech / Product", program:"mba" },
+  { id:77, name:"Oscar F. Garzon", undergrad:"Mechanical Engineering", company:"Twilio", role:"Staff Product Manager", origin:"Bogota, Colombia", location:"Bogota, Colombia", linkedin:"https://www.linkedin.com/in/oscar-f-garzon", bio:"Staff PM at Twilio focused on product growth. Interested in B2C/SMB fintech and robotics.", hobbies:"Lifting, hiking, museums, sketching, baking", function_:"Tech / Product", program:"mba" },
+  { id:78, name:"Jingtong (Maggie) Mai", undergrad:"USC / HKUST / Bocconi (World Bachelor in Business)", company:"McKinsey & Company", role:"Consultant", origin:"Shenzhen, China", location:"Hong Kong SAR", linkedin:"https://www.linkedin.com/in/jingtong-maggie-mai/", bio:"McKinsey consultant in Greater China focusing on consumer, luxury hospitality, and people & org.", hobbies:"", function_:"Consulting", program:"mba" },
+  { id:79, name:"Simran Anand", undergrad:"McGill (Math & Computer Science)", company:"AWS", role:"Software Engineer", origin:"Toronto", location:"Vancouver", linkedin:"https://www.linkedin.com/in/mansimrananand", bio:"SWE at AWS on Commerce Platform building billing and cost management infrastructure. Joining MS/MBA Engineering.", hobbies:"Coffee, dancing, spin class, exploring BC", function_:"Tech / Product", program:"msmba" },
+  { id:80, name:"Daksh Kapoor", undergrad:"Delhi University (Economics)", company:"Clinton Health Access Initiative (CHAI)", role:"", origin:"Delhi, India", location:"Delhi, India", linkedin:"https://www.linkedin.com/in/daksh-kapoor-23738b16a/", bio:"5 years in impact — Bain focused on food systems in Africa, then CHAI improving healthcare delivery across India.", hobbies:"Lifting, hiking, NBA, live music, museums, food", function_:"Non-profit / Impact", program:"mba" },
+  { id:81, name:"Fernanda Mariano", undergrad:"Universidade de São Paulo (Business Administration)", company:"Google", role:"Product Marketing Manager", origin:"São Paulo, Brazil", location:"São Paulo, Brazil", linkedin:"https://www.linkedin.com/in/fernanda-mariano-100257118/", bio:"Product Marketing Manager at Google for 6 years.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:82, name:"Rishab Dhariwal", undergrad:"NMIMS", company:"Nomura", role:"Investment Banker", origin:"Delhi", location:"London", linkedin:"https://www.linkedin.com/in/rishabdhariwal", bio:"IB at Nomura advising on capital raising in international markets. Attending with wife Arhana.", hobbies:"Football, lifting, history, acting, travel", function_:"Finance / Strategy", program:"mba" },
+  { id:83, name:"Arhana Samant Dhariwal", undergrad:"Narsee Monjee (Management & Finance)", company:"Investec UK", role:"Private Credit", origin:"Mumbai", location:"London", linkedin:"https://www.linkedin.com/in/arhana-samant-dhariwal-cfa-48b269167", bio:"Energy and infrastructure private credit at Investec UK. CFA charterholder. Attending with husband Rishab.", hobbies:"Dancing, acting, content creation", function_:"Finance / Strategy", program:"mba" },
+  { id:84, name:"Jimena Manzanedo Delgado", undergrad:"Università di Bologna (Law and Business)", company:"McKinsey & Company", role:"Consultant", origin:"Madrid, Spain", location:"Madrid, Spain", linkedin:"https://www.linkedin.com/in/jimena-manzanedo-delgado/", bio:"McKinsey consultant for 2 years. Law and business background.", hobbies:"Running, hiking, skiing, travel, live music", function_:"Consulting", program:"mba" },
+  { id:85, name:"Eli Berg", undergrad:"Columbia University (Chemical Engineering)", company:"CBRE", role:"Sustainability Consultant", origin:"Seattle", location:"London", linkedin:"https://www.linkedin.com/in/eli-berg-b6b46117a", bio:"Sustainability consultant at CBRE helping commercial real estate investors achieve net zero goals.", hobbies:"Football, hiking, skiing", function_:"Non-profit / Impact", program:"mba" },
+  { id:86, name:"Grace Langford", undergrad:"Butler University", company:"Huron Consulting", role:"Consultant", origin:"Indianapolis", location:"Denver", linkedin:"https://www.linkedin.com/in/grace-langford/", bio:"Huron Consulting — data strategy for healthcare providers, then corporate development and AI strategy.", hobbies:"Hiking, running, skiing, dinner parties, reading", function_:"Consulting", program:"mba" },
+  { id:87, name:"Sergio Samper Hernández", undergrad:"Universidad Carlos III de Madrid", company:"McKinsey & Company", role:"Consultant", origin:"Spain", location:"Panama", linkedin:"https://www.linkedin.com/in/sergio-samper/", bio:"McKinsey consultant on strategy and M&A across Europe and LATAM. Currently on rotation in Panama.", hobbies:"Traveling, running, going out", function_:"Consulting", program:"mba" },
+  { id:88, name:"Asha Malani", undergrad:"Rice University (Cognitive Science)", company:"Nestle", role:"Brand Manager", origin:"Bay Area, CA", location:"Washington, DC", linkedin:"https://www.linkedin.com/in/asha-malani", bio:"Brand management at Nestle. Studied Cognitive Science at Rice.", hobbies:"Foodie, photography, travel", function_:"Consumer / Retail", program:"mba" },
+  { id:89, name:"Nick Goldstein", undergrad:"The University of Auckland", company:"L.E.K. Consulting", role:"Associate Consultant", origin:"Auckland, NZ", location:"Melbourne, Australia", linkedin:"https://www.linkedin.com/in/nick-goldstein", bio:"L.E.K. Consulting in energy & environment. Moving to Boston with partner.", hobbies:"", function_:"Consulting", program:"mba" },
+  { id:90, name:"Shushanna Arakelyan", undergrad:"American University of Armenia (Business Admin)", company:"C-QUADRAT Ampega Asset Management Armenia", role:"Investments", origin:"Armenia", location:"Armenia", linkedin:"https://www.linkedin.com/in/shushanna-arakelyan-cfa-1a7a7112a/", bio:"Works at Armenia's pension fund management company, focused on impact investing.", hobbies:"Hiking, photography, cooking, drums", function_:"Finance / Strategy", program:"mba" },
+  { id:91, name:"Alejandra Hernandez Zuluaga", undergrad:"Universidad de los Andes (Economics & Law)", company:"McKinsey & Company", role:"Consultant", origin:"Bogotá, Colombia", location:"Bogotá, Colombia", linkedin:"https://linkedin.com/in/alejandra-hernández-zuluaga-6948b9168", bio:"McKinsey consultant focused on banking for low income segments and SMEs.", hobbies:"Tennis, scuba diving, travel", function_:"Consulting", program:"mba" },
+  { id:92, name:"Ben Jackson", undergrad:"Naval Academy", company:"US Navy", role:"Navy SEAL Troop Commander", origin:"Virginia Beach", location:"Virginia Beach", linkedin:"", bio:"Navy SEAL Troop Commander. Interested in entrepreneurship, maritime autonomy, and national security policy.", hobbies:"Running, skiing, hunting, spear-fishing", function_:"Military / Government", program:"mba" },
+  { id:93, name:"Brendan Hogg", undergrad:"UC Berkeley (EECS)", company:"Apple", role:"Engineering Program Manager", origin:"Berkeley, CA", location:"San Francisco", linkedin:"https://www.linkedin.com/in/brendan-hogg/", bio:"EPM at Apple in Hardware Technologies R&D. Previously in worldwide iPhone Manufacturing.", hobbies:"Running, travel, skiing", function_:"Tech / Product", program:"mba" },
+  { id:94, name:"Isaac Blake", undergrad:"BYU", company:"KSV Global", role:"VC", origin:"Wellesley, MA", location:"South Florida", linkedin:"", bio:"Spent time at Oliver Wyman before joining KSV Global, a VC firm in West Palm Beach. Moving back to Boston.", hobbies:"American football, board games, cheeseburgers", function_:"Venture Capital", program:"mba" },
+  { id:95, name:"Samuel Capozza", undergrad:"RISD (Architecture)", company:"Gensler", role:"Real Estate Strategy", origin:"South Africa", location:"Los Angeles", linkedin:"http://www.linkedin.com/in/samuelcapozza", bio:"Real Estate Strategy at Gensler. RISD architecture grad, previously PM & Architect in NYC.", hobbies:"Running, surfing, bocce, furniture making, winemaking", function_:"Finance / Strategy", program:"mba" },
+  { id:96, name:"Axel Ohrstrom", undergrad:"Carleton College", company:"Amazon Web Services (AWS)", role:"Business Development", origin:"Sweden / Virginia", location:"New York", linkedin:"https://www.linkedin.com/in/axel-ohrstrom/", bio:"AWS public sector cloud, 3 years in Strategy & Ops then Business Development.", hobbies:"Reading, lifting, baking Swedish pastries, restaurants", function_:"Tech / Product", program:"mba" },
+  { id:97, name:"Calvin Seibl", undergrad:"Imperial College Business School", company:"Würth Vietnam", role:"Country Director", origin:"Germany", location:"Ho Chi Minh City", linkedin:"https://www.linkedin.com/in/calvinseibl", bio:"Country Director for Würth in Vietnam. Automotive background, raced in junior formula series.", hobbies:"Formula racing, F1", function_:"Operations", program:"mba" },
+  { id:98, name:"Chaitanya Medipally", undergrad:"Osmania University / Cornell University (Masters)", company:"Hiya Inc.", role:"Product Manager", origin:"Hyderabad, India", location:"Seattle", linkedin:"https://www.linkedin.com/in/chaitanya-medipally", bio:"Product Manager at Hiya startup, managing the mobile app.", hobbies:"Strength training, cooking, food spots", function_:"Tech / Product", program:"mba" },
+  { id:99, name:"Kathryn Sampson", undergrad:"University of Wisconsin (Biology)", company:"BCG", role:"Consultant", origin:"Minnesota", location:"Chicago", linkedin:"https://www.linkedin.com/in/kathrynmsampson", bio:"BCG consultant on healthcare projects — biopharma, provider, and private equity.", hobbies:"Spin class, exploring cities, espresso", function_:"Consulting", program:"mba" },
+  { id:100, name:"Shreyan Puri", undergrad:"", company:"Stellaris", role:"Early-stage VC", origin:"Delhi", location:"Bangalore", linkedin:"https://www.linkedin.com/in/shreyanpuri/", bio:"VC investor at Stellaris, India's leading early-stage VC. Previously Bain.", hobbies:"Golf, DJ at house parties", function_:"Venture Capital", program:"mba" },
+  { id:101, name:"Liz Moerman", undergrad:"University of Southern California", company:"NVIDIA", role:"Marketing", origin:"Chicago suburbs", location:"SF Bay Area", linkedin:"https://www.linkedin.com/in/lizmoerman", bio:"Marketing at NVIDIA. Grew up outside Chicago, lived in California for 10 years.", hobbies:"Restaurants, live music, running", function_:"Tech / Product", program:"mba" },
+  { id:102, name:"Nandini Gupta", undergrad:"Christ University, Bangalore", company:"L Catterton", role:"Investments", origin:"Hyderabad", location:"Mumbai", linkedin:"https://www.linkedin.com/in/nandini-gupta-1998ng/", bio:"Consumer and healthcare investments at L Catterton.", hobbies:"Tennis", function_:"Private Equity", program:"mba" },
+  { id:103, name:"Sam Bergman", undergrad:"University of Michigan", company:"PepsiCo / Cybersecurity startup", role:"Marketing + Co-founder", origin:"Michigan", location:"Chicago", linkedin:"https://linkedin.com/in/s-bergman", bio:"Marketing at PepsiCo and co-running a cybersecurity startup.", hobbies:"Chess, reading, exploring Chicago", function_:"Consumer / Retail", program:"mba" },
+  { id:104, name:"Himanshu Chhabra", undergrad:"Shri Ram College of Commerce", company:"Peak XV Partners", role:"Investor", origin:"Jalandhar, India", location:"Bangalore", linkedin:"https://www.linkedin.com/in/himanshuchhabra/", bio:"Investing in consumer and internet companies at Peak XV Partners (formerly Sequoia India). Started at McKinsey.", hobbies:"Photography, movies", function_:"Venture Capital", program:"mba" },
+  { id:105, name:"Kyle Dai", undergrad:"London School of Economics", company:"atla (applied AI startup)", role:"Product / Ops / Solutions Engineering", origin:"China & England", location:"London", linkedin:"https://www.linkedin.com/in/kdai/", bio:"First hire at applied AI research startup backed by Creandum and YC. Started in IB at CS/UBS.", hobbies:"Football, spicy food, thrifting", function_:"Tech / Product", program:"mba" },
+  { id:106, name:"Jake Ettleson", undergrad:"University of Illinois Urbana-Champaign (Industrial Engineering)", company:"Kearney", role:"Consultant", origin:"Chicago", location:"Chicago", linkedin:"https://www.linkedin.com/in/jacob-ettleson-006007/", bio:"Kearney consultant in Strategic Operations (healthcare, industrial, CPG clients). Born and raised in Chicago.", hobbies:"Golf, tennis, cooking, podcasts, Chicago sports", function_:"Consulting", program:"mba" },
+  { id:107, name:"Dhruv Periwal", undergrad:"Nanyang Technological University (Business)", company:"Strategy&", role:"Consultant", origin:"Jaipur, India", location:"Singapore", linkedin:"https://www.linkedin.com/in/dhruvperiwal", bio:"Consultant at Strategy&. Recently externship with agri-tech startup in Nairobi. Interested in food and agri.", hobbies:"", function_:"Consulting", program:"mba" },
+  { id:108, name:"James E. Treacy", undergrad:"University of Pennsylvania (Chemical & Biomolecular Engineering)", company:"US Navy", role:"Submarine Officer", origin:"Canton, CT", location:"Alexandria, DC", linkedin:"https://www.linkedin.com/in/james-e-treacy/", bio:"US Navy submarine officer. Penn engineering grad. Boston sports fan. Moving back to New England.", hobbies:"Traveling, game nights, restaurants", function_:"Military / Government", program:"mba" },
+  { id:109, name:"Max Wills", undergrad:"Brown University", company:"Activate Consulting", role:"Strategy Consultant", origin:"New Jersey", location:"New York", linkedin:"https://www.linkedin.com/in/max-wills", bio:"Strategy consulting in tech/media/entertainment space at Activate Consulting.", hobbies:"Soccer, reading, board games", function_:"Consulting", program:"mba" },
+  { id:110, name:"Hussein Issa", undergrad:"American University of Beirut (Chemical Engineering)", company:"Boston Consulting Group (BCG)", role:"Consultant", origin:"Canada & Lebanon", location:"Dubai", linkedin:"https://www.linkedin.com/in/hussein-issa-53235516b/", bio:"BCG consultant focused on education strategy and sports strategy across the Middle East.", hobbies:"Football (soccer)", function_:"Consulting", program:"mba" },
+  { id:111, name:"Angus Woods", undergrad:"Harvard University (Economics)", company:"Hebbia", role:"PE Team Lead", origin:"Queensland, Australia", location:"NYC", linkedin:"https://www.linkedin.com/in/anguswoods/", bio:"Leads PE team at Hebbia (Series B AI startup). Previously Evercore IB and Vista Equity PE. Harvard Economics.", hobbies:"Music, skiing, hiking, golf, tennis, tech podcasts", function_:"Tech / Product", program:"mba" },
+  { id:112, name:"Manju Andukuri", undergrad:"University of Texas (Chemical Engineering)", company:"Gates Foundation", role:"Strategy Officer", origin:"Austin, Texas", location:"Seattle", linkedin:"https://www.linkedin.com/in/manjula-andukuri/", bio:"Strategy Officer at Gates Foundation supporting investment strategy. Previously BCG consultant.", hobbies:"Running, hiking, skiing, volleyball, dancing, travel", function_:"Non-profit / Impact", program:"mba" },
+  { id:113, name:"Josh Hershkowitz", undergrad:"", company:"Capital One", role:"Email Marketing Lead", origin:"New York City", location:"New York City", linkedin:"https://linkedin.com/in/jhershkowitz/", bio:"Leads email marketing strategy and modeling team at Capital One. Also organizing Yacht Week.", hobbies:"Live music, singing, travel, biking, frisbee, event planning", function_:"Finance / Strategy", program:"mba" },
+  { id:114, name:"Juliette Bromet", undergrad:"Biomedical Robotics (Switzerland)", company:"BCG", role:"Strategy Consultant", origin:"Paris, France", location:"NYC", linkedin:"https://www.linkedin.com/in/juliette-bromet", bio:"BCG strategy consultant in Biopharma and Medtech. Swiss biomedical robotics background, transferred from BCG Zurich.", hobbies:"Skiing, trail running, hiking", function_:"Consulting", program:"mba" },
+  { id:115, name:"Luke Ledva", undergrad:"Naval Academy", company:"US Marine Corps", role:"Marine", origin:"New York", location:"Southern California", linkedin:"https://www.linkedin.com/in/luke-ledva", bio:"Marine stationed in Southern California. Naval Academy grad from New York.", hobbies:"Food, board games", function_:"Military / Government", program:"mba" },
+  { id:116, name:"Nolan Morrison", undergrad:"Bucknell University (Chemical Engineering)", company:"Deloitte Consulting", role:"Consultant", origin:"New Hampshire", location:"Greater Boston", linkedin:"https://www.linkedin.com/in/nolan-morrison-078b03179", bio:"Deloitte consultant working at intersection of data and strategy for life sciences clients.", hobbies:"Golf, cooking, skiing", function_:"Consulting", program:"mba" },
+  { id:117, name:"Kuzi Mahwire", undergrad:"Dartmouth College", company:"UBS", role:"IB Associate", origin:"Zimbabwe", location:"New York", linkedin:"https://www.linkedin.com/in/kuzi-mahwire-130473103", bio:"Healthcare investment banking associate at UBS. 2+2 admit. From Zimbabwe, came to US for Dartmouth.", hobbies:"Soccer, F1, cycling, reading, blogging", function_:"Finance / Strategy", program:"mba" },
+  { id:118, name:"Tancredi Saba", undergrad:"Fudan University (International Business)", company:"Roland Berger", role:"Strategy Consultant", origin:"Italy", location:"Dubai", linkedin:"https://www.linkedin.com/in/tancredi-saba-1474a4162", bio:"Roland Berger strategy consultant in Digital & AI, Telecom, FS across GCC countries.", hobbies:"Football, boxing, NBA, NFL, American literature", function_:"Consulting", program:"mba" },
+  { id:119, name:"Miles Graham", undergrad:"Harvard / Peking University (Economics Masters)", company:"US Navy", role:"Surface Warfare Officer", origin:"Washington, DC", location:"Los Angeles", linkedin:"https://www.linkedin.com/in/miles-graham-664028112", bio:"US Navy Surface Warfare Officer commanding unit integrating autonomous surface vessels. Previously Carnegie Endowment.", hobbies:"Hiking, running, cycling, surfing, sailing, languages", function_:"Military / Government", program:"mba" },
+  { id:120, name:"Allison (Ally) Kopp", undergrad:"University of Calgary (BComm)", company:"McKinsey & Company", role:"Consultant", origin:"Calgary, Alberta", location:"Calgary, Alberta", linkedin:"https://www.linkedin.com/in/allisonkopp", bio:"McKinsey consultant gaining experience across sectors & geographies.", hobbies:"Travel, music, comedy, pilates, water skiing", function_:"Consulting", program:"mba" },
+  { id:121, name:"Sneha Sinha", undergrad:"University of Tennessee (MS Business Analytics)", company:"AutoZone", role:"Senior Merchandising Data Analyst", origin:"Memphis, Tennessee", location:"Memphis, Tennessee", linkedin:"https://www.linkedin.com/in/sneha-sinha8/", bio:"Senior Data Analyst at AutoZone supporting merchandising PMs. Looking to pivot to Media/Entertainment/Sports.", hobbies:"Game nights, reading, F1, cricket", function_:"Consumer / Retail", program:"mba" },
+  { id:122, name:"Miya Lyu", undergrad:"University of Chicago (Economics & Statistics)", company:"Morgan Stanley", role:"Private Equity", origin:"Shijiazhuang, China", location:"NYC", linkedin:"https://www.linkedin.com/in/miya-lyu/", bio:"Private equity at Morgan Stanley. Previously Goldman Sachs IB. UChicago Economics and Statistics.", hobbies:"Running, tennis, travel, hiking, reading", function_:"Private Equity", program:"mba" },
+  { id:123, name:"Navneet Raghuram", undergrad:"Institute of Chartered Accountants of India", company:"WestBridge Capital", role:"PE/VC", origin:"Mumbai, India", location:"Bengaluru", linkedin:"https://www.linkedin.com/in/navneet-raghuram-016a4614b", bio:"CPA + CFA working in PE/VC at WestBridge Capital.", hobbies:"Photography", function_:"Venture Capital", program:"mba" },
+  { id:124, name:"Camila Sassaki Ono", undergrad:"Economics", company:"AgTech startup (prev)", role:"", origin:"Tokyo", location:"São Paulo, Brazil", linkedin:"https://www.linkedin.com/in/camila-ono/", bio:"Spent childhood in Tokyo. Worked across tech from Big Tech to scale-ups, plus 4 years on founding team of an agtech.", hobbies:"Yoga, hiking, cooking, art, dance", function_:"Tech / Product", program:"mba" },
+  { id:125, name:"Mauricio Guzman Mascorro", undergrad:"Chemical Engineering", company:"FEMSA", role:"Strategic Planning & M&A", origin:"Monterrey, Mexico", location:"Monterrey, Mexico", linkedin:"https://linkedin.com/in/mauricio-guzmán-3a7b13168", bio:"Strategic Planning and M&A at FEMSA (leading LATAM retailer and Coca-Cola bottler).", hobbies:"Soccer, tennis, padel, chess", function_:"Finance / Strategy", program:"mba" },
+  { id:126, name:"Varsha Iyer", undergrad:"Dartmouth College (CS & Digital Arts)", company:"Microsoft", role:"Product Manager", origin:"Wellesley, MA", location:"NYC", linkedin:"https://www.linkedin.com/in/varsha-b-iyer", bio:"PM in AI Developer Tools at Microsoft. Previously Oracle PM. CS and Digital Arts from Dartmouth.", hobbies:"Drawing, restaurants, plants, Patriots", function_:"Tech / Product", program:"mba" },
+  { id:127, name:"Eva Calin", undergrad:"University of Birmingham", company:"Citi Private Bank", role:"Relationship Manager", origin:"Romania", location:"Geneva, Switzerland", linkedin:"https://www.linkedin.com/in/eva-calin/", bio:"Citi Private Bank RM advising UHNW clients. Also CFO of an AI startup in Bolivia.", hobbies:"Hiking, skiing, baking, volleyball", function_:"Finance / Strategy", program:"mba" },
+  { id:128, name:"Hossain Ahmad", undergrad:"Rutgers School of Engineering (Aerospace Engineering)", company:"Blue Origin", role:"Engine Test Manager", origin:"New Jersey", location:"Van Horn, Texas", linkedin:"https://www.linkedin.com/in/hossain-a-10633b61", bio:"Manages engine test team for Advanced Engines Programs at Blue Origin. Testing rocket engines in West Texas.", hobbies:"Golf", function_:"Military / Government", program:"msmba" },
+  { id:129, name:"Hadley Callaway", undergrad:"Columbia University (CS)", company:"Dev tools startup", role:"Founder", origin:"North Carolina", location:"SF", linkedin:"https://www.linkedin.com/in/hadley-callaway/", bio:"CS from Columbia, software engineer in fintech/cybersecurity, now launching a dev tools startup in SF.", hobbies:"Marathon running, skiing", function_:"Tech / Product", program:"mba" },
+  { id:130, name:"Armaan Hooda", undergrad:"UC San Diego (Economics)", company:"Glassdoor", role:"Strategy & Operations", origin:"Los Angeles", location:"SF", linkedin:"https://www.linkedin.com/in/armaan-hooda/", bio:"B2C Business Operations Manager at Glassdoor. Worked through Glassdoor-Fishbowl acquisition and Indeed merger.", hobbies:"Foodie, Lakers, hiking", function_:"Tech / Product", program:"mba" },
+  { id:131, name:"Nathan Jen", undergrad:"Carnegie Mellon University (HCI Masters)", company:"Capital One", role:"Product Manager", origin:"Los Angeles", location:"New York", linkedin:"https://www.linkedin.com/in/nathanjen/", bio:"PM owning the Rewards mobile experience at Capital One. CMU HCI Masters.", hobbies:"Golf, horror movies, gaming, foodie, LA sports", function_:"Tech / Product", program:"mba" },
+  { id:132, name:"Mariko Nagano", undergrad:"Tokyo University", company:"Japanese trading company", role:"", origin:"Los Angeles", location:"Tokyo", linkedin:"https://www.linkedin.com/in/mariko-nagano-b5bb14151", bio:"Grew up in LA, moved to Tokyo for university. Works at a Japanese trading company in startup investing and digital consulting.", hobbies:"Skiing, wine tasting", function_:"Finance / Strategy", program:"mba" },
+  { id:133, name:"Said Enguzekli", undergrad:"Boğaziçi Üniversitesi (Management & Economics)", company:"INTERA Investments", role:"Family Office Investments", origin:"Istanbul, Turkey", location:"Istanbul, Turkey", linkedin:"https://www.linkedin.com/in/saidenguzekli", bio:"Family office focused on alternative investments. Previously McKinsey.", hobbies:"Traveling, international films", function_:"Finance / Strategy", program:"mba" },
+  { id:134, name:"Justin Hill", undergrad:"BYU (Computer Science)", company:"Figma", role:"Software Engineer (Growth)", origin:"Newport Beach, CA", location:"NYC", linkedin:"https://www.linkedin.com/in/justinhill426", bio:"SWE on Figma's growth team. Joining MS/MBA cohort. Studied CS, Mandarin minor, entrepreneurship minor.", hobbies:"Running, soccer, tennis, reading, skiing, surfing", function_:"Tech / Product", program:"msmba" },
+  { id:135, name:"Bolat Khojayev", undergrad:"University of British Columbia (Business & Comp Sci)", company:"Connectly.ai", role:"Founding Engineer", origin:"Kazakhstan", location:"Vancouver", linkedin:"https://www.linkedin.com/in/bkhojayev/", bio:"Founding engineer at Connectly.ai, helped scale from 6 to 60 people. Previously Amazon. Joining MS/MBA.", hobbies:"", function_:"Tech / Product", program:"msmba" },
+  { id:136, name:"Effie Tan", undergrad:"", company:"Australian Government", role:"Public Servant / Comedian", origin:"Australia", location:"Sydney", linkedin:"https://www.linkedin.com/in/effie-tan", bio:"Public servant working on economic diversification for coal-mining regions. Also a standup comedian. Ex-Bain.", hobbies:"Comedy, tennis", function_:"Non-profit / Impact", program:"mba" },
+  { id:137, name:"Harshit Jain", undergrad:"SRCC (Business)", company:"Elevation Capital", role:"VC Investor", origin:"Bengaluru, India", location:"Bengaluru, India", linkedin:"https://in.linkedin.com/in/harshit-jain-srcc22", bio:"VC investor at Elevation Capital (India's leading early-stage VC). Focused on consumer x AI. Started at BCG.", hobbies:"Travel, swimming, table tennis, movies", function_:"Venture Capital", program:"mba" },
+  { id:138, name:"Yasmin Ballew", undergrad:"Cornell University (Labor Relations)", company:"Procter & Gamble", role:"Brand Management", origin:"California", location:"Boston", linkedin:"https://www.linkedin.com/in/yasmin-ballew-30256a19a", bio:"Brand Management at P&G in Boston. Also does admissions/career consulting on the side.", hobbies:"Nature, art, ceramics", function_:"Consumer / Retail", program:"mba" },
+  { id:139, name:"Harry Pang", undergrad:"University of Sydney", company:"Amazon", role:"Product Manager", origin:"Sydney, Australia", location:"Sydney, Australia", linkedin:"https://www.linkedin.com/in/harry-pang", bio:"4 years at Amazon, moving from brand management to product management.", hobbies:"Golf, tennis, photography, fashion, cooking", function_:"Tech / Product", program:"mba" },
+  { id:140, name:"Devansh Kanthed", undergrad:"Mechanical Engineering", company:"Jindal Steel", role:"Engineer", origin:"Indore, India", location:"Indore, India", linkedin:"https://www.linkedin.com/in/devansh-kanthed-174939287", bio:"4 years at Jindal Steel on large-scale projects and sustainability initiatives in heavy industry.", hobbies:"Cooking, table tennis, surfing", function_:"Operations", program:"mba" },
+  { id:141, name:"Jahlen Brown", undergrad:"Rutgers (Finance)", company:"Real estate private equity", role:"", origin:"New Jersey", location:"NYC", linkedin:"https://www.linkedin.com/in/jahlenbrown/", bio:"4 years in real estate private equity across equity, credit, and M&A strategies.", hobbies:"Traveling, restaurants, video games", function_:"Private Equity", program:"mba" },
+  { id:142, name:"Eben Boakye-Boadu", undergrad:"HSE University (Science, Technology & Innovation Management)", company:"Yango", role:"Senior Project Manager", origin:"Ghana", location:"Moscow", linkedin:"https://linkedin.com/in/eboakyeboadu", bio:"Senior PM at Yango, leading driver operations and market expansion across Africa, ME, and LATAM.", hobbies:"Football, hiking, outdoors", function_:"Operations", program:"mba" },
+  { id:143, name:"Angus Kennedy", undergrad:"University of Melbourne (Commerce & Mathematics)", company:"BCG", role:"Consultant", origin:"Melbourne, Australia", location:"Melbourne, Australia", linkedin:"https://www.linkedin.com/in/angus-kennedy", bio:"BCG Melbourne consultant across airline, consumer/retail, and PE clients.", hobbies:"Weights, running, basketball, Australian rules football, travel, burritos", function_:"Consulting", program:"mba" },
+  { id:144, name:"Nannapat Ach", undergrad:"Chulalongkorn University (Banking & Finance)", company:"Ministry of Finance of Thailand", role:"PPP Project", origin:"Bangkok, Thailand", location:"Bangkok, Thailand", linkedin:"www.linkedin.com/in/nannapat-ach", bio:"Works at Thai Ministry of Finance on public private partnership projects.", hobbies:"", function_:"Military / Government", program:"mba" },
+  { id:145, name:"Nathan Meade", undergrad:"Virginia Military Institute (Mechanical Engineering)", company:"USAF", role:"Air Force Officer", origin:"Williamsburg, Virginia", location:"Raleigh, NC", linkedin:"https://www.linkedin.com/in/nathan-meade-f15/", bio:"13 years as USAF officer stationed across the US and UK. VMI mechanical engineering.", hobbies:"Guitar, weightlifting, BBQ, travel", function_:"Military / Government", program:"mba" },
+  { id:146, name:"Omaymah Alharahsheh", undergrad:"Barnard, Columbia University", company:"Startup", role:"Founder", origin:"Jordan", location:"UAE & KSA", linkedin:"https://www.linkedin.com/in/omaymah-alharahsheh/", bio:"Founding startup in talent development x AI-agentic growth. Prev economic policy at Royal Court of Jordan.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:147, name:"Kazuto Onodera", undergrad:"", company:"Bank", role:"Project Finance Manager", origin:"Japan", location:"Amsterdam, Netherlands", linkedin:"www.linkedin.com/in/kazuto-onodera-ab303324a", bio:"Project finance manager at a bank focusing on renewables and social infrastructure. Moving with family.", hobbies:"Tennis", function_:"Finance / Strategy", program:"mba" },
+  { id:148, name:"Chris Ogbodo", undergrad:"Harvard Law (LLM)", company:"Burlington", role:"Founder", origin:"Nigeria", location:"Cambridge, MA", linkedin:"https://www.linkedin.com/in/ccogbodo", bio:"Founder of Burlington, helping professionals secure EB-1A/NIW green cards. Previously Google, Meta, Omidyar.", hobbies:"", function_:"Tech / Product", program:"mba" },
+  { id:149, name:"Sam Allen", undergrad:"University of Wisconsin (International Studies)", company:"US Army", role:"Army Captain", origin:"Wisconsin", location:"Fort Bragg, NC", linkedin:"https://www.linkedin.com/in/samuel-d-allen/", bio:"Army captain in civil affairs. Recently deployed as civil affairs director for East Africa.", hobbies:"Outdoors, birdwatching", function_:"Military / Government", program:"mba" },
+  { id:150, name:"Vani Agarwal", undergrad:"SRCC, Delhi (Economics)", company:"Mitti Labs", role:"Climate Tech", origin:"Mumbai, India", location:"Mumbai, India", linkedin:"https://www.linkedin.com/in/vani-agarwal-900165191/", bio:"Working in climate/sustainability at Mitti Labs. Previously Sustainable Finance Programme at Nomura.", hobbies:"Cooking, travel", function_:"Non-profit / Impact", program:"mba" },
+  { id:151, name:"Luke Downing", undergrad:"UChicago", company:"Energy consulting", role:"Consultant", origin:"Washington, D.C.", location:"NYC", linkedin:"https://www.linkedin.com/in/luke-downing-a717271a0/", bio:"4 years in consulting focused on energy (traditional and renewables) and materials. Looking to move to IB.", hobbies:"Basketball, theology, Baroque art", function_:"Energy", program:"mba" },
+  { id:152, name:"Mayisha Sultana", undergrad:"Princeton", company:"MaRS Discovery District", role:"Biotech Accelerator", origin:"Chittagong, Bangladesh", location:"Toronto, Canada", linkedin:"https://www.linkedin.com/in/mayishasultana/", bio:"Helps biotech startups raise capital at MaRS Discovery District. Joining MS/MBA Biotech program.", hobbies:"Sailing, camping, cooking, board games", function_:"Healthcare", program:"msmba" },
+  { id:153, name:"Nina Laouchez", undergrad:"UChicago", company:"PepsiCo", role:"Senior Manager, Corporate Finance & M&A", origin:"Sao Paulo, Brazil / NYC", location:"NYC", linkedin:"https://www.linkedin.com/in/nina-laouchez-b53236139/", bio:"Senior Manager in PepsiCo's Corporate Finance and M&A team. Grew up in São Paulo and NYC, half French from Martinique.", hobbies:"Dance, photography, painting, sushi, travel", function_:"Finance / Strategy", program:"mba" },
+  { id:154, name:"Shivani Dixit", undergrad:"UChicago (Econ)", company:"Henkel Search Partners", role:"Buyside Recruiting", origin:"Las Vegas / Wisconsin", location:"NYC", linkedin:"https://www.linkedin.com/in/shivaniddixit/", bio:"Buyside recruiting firm. Previously haircare brand and strategy consulting.", hobbies:"Exploring neighborhoods, running, concerts", function_:"Finance / Strategy", program:"mba" },
+  { id:155, name:"Sreeni (Aishwarya Sreenivas)", undergrad:"Cornell (Design) / Harvard GSD (Masters in Design Technology)", company:"Cayda AI", role:"Founder", origin:"India", location:"Bay Area", linkedin:"https://www.linkedin.com/in/aishsreeni", bio:"Founder of Cayda AI. Previously NVIDIA AI Software Design and Product teams. Joining MS/MBA Engineering.", hobbies:"Painting, wine tasting, bachata dancing", function_:"Tech / Product", program:"msmba" },
+  { id:156, name:"Ujjwal Agarwal", undergrad:"IIT Bombay (Mechanical Engineering)", company:"Jaguar Land Rover", role:"Engineer", origin:"Bangalore, India", location:"Bangalore, India", linkedin:"https://www.linkedin.com/in/ujjwalagarwal299", bio:"Works on next-gen feature development at Jaguar Land Rover. IIT Bombay mechanical engineering grad.", hobbies:"Backpacking, trekking, reading, music, vocals, harmonica, guitar", function_:"Operations", program:"mba" },
+  { id:157, name:"Yoko Yamanaka", undergrad:"University of Tokyo (Engineering)", company:"Mitsubishi Corporation", role:"US-Australia Real Estate Investments", origin:"Tokyo", location:"Tokyo", linkedin:"www.linkedin.com/in/yoko-yamanaka-878467339", bio:"Manages US-Australia Real Estate at Mitsubishi. Childhood in Chicago/Indianapolis. Summited Kilimanjaro for honeymoon.", hobbies:"Golf, tennis, hiking, F1, baseball", function_:"Finance / Strategy", program:"mba" },
+  { id:158, name:"Carter Braswell", undergrad:"Vanderbilt University", company:"Clemson University Athletic Department", role:"Private Capital Strategy", origin:"Memphis, TN", location:"New York / SC", linkedin:"https://www.linkedin.com/in/carter-b-3134b166/", bio:"Works with Clemson Athletic Dept on private capital options. Background in IB and PE. Interested in sports investing.", hobbies:"Sports, restaurants, bars", function_:"Finance / Strategy", program:"mba" },
+  { id:159, name:"Adhitya Venkatraman", undergrad:"Claremont McKenna", company:"Asset management", role:"Economist", origin:"California", location:"NYC", linkedin:"https://www.linkedin.com/in/adhityavenkatraman", bio:"Economist covering global markets in asset management.", hobbies:"", function_:"Finance / Strategy", program:"mba" },
+  { id:160, name:"Muskaan Sharma", undergrad:"", company:"Bertelsmann India Investments", role:"VC Investor", origin:"India", location:"New Delhi", linkedin:"https://www.linkedin.com/in/muskaan-sharma260900/", bio:"VC at Bertelsmann India Investments backing education and healthcare startups. Prev Bain, BioLite Kenya.", hobbies:"Snorkeling, trekking, movies, Modern Family, travel", function_:"Venture Capital", program:"mba" },
+  { id:161, name:"Koki Ajiri", undergrad:"NYU Abu Dhabi (Philosophy, Public Health, Public Policy)", company:"UN / Bain Tokyo (prev)", role:"Consultant", origin:"Japan", location:"Italy", linkedin:"https://www.linkedin.com/in/kokiajiri/", bio:"6-month consulting stint with UN in Italy. Previously Bain Tokyo. Licensed skydiver and wingsuiter.", hobbies:"Skydiving, wingsuiting, squash, badminton, outdoors, Effective Altruism", function_:"Non-profit / Impact", program:"mba" },
+  { id:162, name:"Garvita Gulhati", undergrad:"", company:"WestBridge Capital / Why Waste", role:"Investor / Nonprofit Founder", origin:"Bangalore, India", location:"Bangalore, India", linkedin:"https://www.linkedin.com/in/garvitagulhati", bio:"Investments team at WestBridge Capital (fintech). Also founder of Why Waste, a water conservation nonprofit.", hobbies:"Swimming, Kathak dance", function_:"Venture Capital", program:"mba" },
+  { id:163, name:"Arjun Ahluwalia", undergrad:"Duke University", company:"NBA", role:"League Pass", origin:"Central NJ", location:"NYC", linkedin:"https://www.linkedin.com/in/arjun-13/", bio:"Working on NBA League Pass. Previously banking and VC. Runs nonprofit Givfunds supporting global entrepreneurs.", hobbies:"Basketball, traveling, food spots, nonprofit", function_:"Consumer / Retail", program:"mba" },
+  { id:164, name:"Akira Nishikawa", undergrad:"University College Cork (Ireland)", company:"Mitsui & Co", role:"Healthcare Investments & Biz-Dev", origin:"Tokyo", location:"Tokyo", linkedin:"www.linkedin.com/in/akira-n-47a982143", bio:"Healthcare Investments at Mitsui & Co. Previously with IHH Healthcare in Singapore. High school in India.", hobbies:"Golf, trekking, tennis, skiing, music, road trips, Onsen", function_:"Healthcare", program:"mba" },
+];
+
+// ─────────────────────────────────────────────────────────────
+// UTILITY
+// ─────────────────────────────────────────────────────────────
+function initials(name) {
+  return name.split(' ').filter(Boolean).slice(0,2).map(w => w[0]).join('').toUpperCase();
+}
+
+function normalizeStr(s) {
+  return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+// Aggressive normalization for deduplication: strips accents, punctuation, extra spaces
+// and trailing country/region qualifiers so "Toronto, Canada" === "Toronto"
+const GEO_SUFFIXES = /\s+(canada|usa|us|united states|uk|england|scotland|australia|brazil|germany|france|spain|italy|india|japan|netherlands|switzerland|colombia|peru|chile|mexico|argentina|vietnam|thailand|singapore|israel|turkey|ghana|mongolia|armenia|jordan|nigeria|kazakhstan|bangladesh|indonesia|ireland|portugal|sweden|norway|denmark|finland|poland|russia|ukraine|kenya|south africa|new zealand|south korea|china|hong kong sar|taiwan|malaysia|philippines|saudi arabia|uae|qatar|bahrain|kuwait|oman|iran|iraq|lebanon|egypt|morocco|algeria|ethiopia|tanzania|zimbabwe|uganda|ghana|senegal|cameroon)\s*$/;
+
+function normalizeForDedup(s) {
+  return (s || '')
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // strip accents
+    .replace(/\./g, '')          // periods: D.C. → dc
+    .replace(/[,\-()\/]/g, ' ') // punctuation → space
+    .replace(/\s+/g, ' ')       // collapse spaces
+    .trim()
+    .replace(GEO_SUFFIXES, '')  // strip trailing country name
+    .trim();
+}
+
+// ─────────────────────────────────────────────────────────────
+// BUILD FILTERS
+// ─────────────────────────────────────────────────────────────
+// Interest categories derived from hobbies + bio text
+const INTEREST_DEFS = {
+  'Sports & Fitness':     ['running','marathon','gym','lifting','weights','basketball','soccer','tennis','golf','volleyball','cricket','padel','pickleball','cycling','swim','karate','boxing','yoga','pilates','spin class','wrestling','rugby','badminton','squash','track','football'],
+  'Outdoors & Adventure': ['hiking','ski','skiing','surfing','scuba','sailing','climbing','trekking','backpack','camping','spear-fish','wingsuit','skydiv','outdoors','national park','mountain','trail','Kilimanjaro'],
+  'Music & Arts':         ['music','guitar','piano','singing','vocals','harmonica','drums','dj','dance','dancing','bachata','art','painting','photography','film','comedy','pottery','ceramics','acting','content creator','fashion','design'],
+  'Food & Cooking':       ['cooking','foodie','food','restaurant','baking','cuisine','wine','coffee','matcha','sushi','bbq','risotto','recipes','eating'],
+  'Travel':               ['travel','traveling','travelling','exploring','trip','road trip','countries'],
+  'Reading & Learning':   ['reading','books','philosophy','theology','history','literature','podcast','language','languages','biography'],
+  'Gaming & Esports':     ['gaming','chess','board game','video game','fifa','xbox','f1','formula','esports','shuffleboard','risk','frisbee'],
+  'Sustainability':       ['sustainability','climate','carbon','decarboniz','impact','conservation','effective altruism','net zero','renewable'],
+  'Startups & Building':  ['startup','founder','build','entrepreneur','venture','micro-saas','founding'],
+};
+
+function getInterests(m) {
+  const text = normalizeStr([m.hobbies, m.bio, m.role, m.company].join(' '));
+  return Object.keys(INTEREST_DEFS).filter(cat =>
+    INTEREST_DEFS[cat].some(kw => text.includes(normalizeStr(kw)))
+  );
+}
+
+function populateFilters() {
+  const functions = [...new Set(MEMBERS.map(m => m.function_).filter(Boolean))].sort();
+
+  // Deduplicate locations by aggressively normalized key, keep first display form
+  const locMap = new Map();
+  MEMBERS.forEach(m => {
+    if (!m.location) return;
+    const key = normalizeForDedup(m.location);
+    if (!locMap.has(key)) locMap.set(key, m.location);
+  });
+  const locations = [...locMap.entries()].sort((a,b) => a[1].localeCompare(b[1]));
+
+  const ff = document.getElementById('filter-function');
+  functions.forEach(f => { const o = document.createElement('option'); o.value = f; o.textContent = f; ff.appendChild(o); });
+
+  const fl = document.getElementById('filter-location');
+  locations.forEach(([val, label]) => { const o = document.createElement('option'); o.value = val; o.textContent = label; fl.appendChild(o); });
+
+  const fi = document.getElementById('filter-interests');
+  Object.keys(INTEREST_DEFS).forEach(cat => {
+    const o = document.createElement('option'); o.value = cat; o.textContent = cat; fi.appendChild(o);
+  });
+}
+
+// ─────────────────────────────────────────────────────────────
+// RENDER
+// ─────────────────────────────────────────────────────────────
+function render() {
+  const q = normalizeStr(document.getElementById('search').value);
+  const fn = document.getElementById('filter-function').value;
+  const fl = normalizeForDedup(document.getElementById('filter-location').value);
+  const fi = document.getElementById('filter-interests').value;
+  const fp = document.getElementById('filter-program').value;
+
+  const filtered = MEMBERS.filter(m => {
+    if (fn && m.function_ !== fn) return false;
+    if (fl && normalizeForDedup(m.location) !== fl) return false;
+    if (fp && m.program !== fp) return false;
+    if (fi && !getInterests(m).includes(fi)) return false;
+    if (q) {
+      const haystack = normalizeStr([m.name, m.company, m.role, m.undergrad, m.origin, m.location, m.hobbies, m.bio].join(' '));
+      if (!haystack.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  grid.innerHTML = '';
+
+  document.getElementById('shown-count').textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  filtered.forEach((m, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.animationDelay = `${Math.min(i * 20, 300)}ms`;
+    card.onclick = () => openModal(m);
+
+    const memberInterests = getInterests(m);
+    const interestChips = memberInterests.slice(0,2).map(t =>
+      `<span class="chip chip-origin">${t}</span>`
+    ).join('');
+    const programBadge = m.program === 'msmba'
+      ? `<span class="chip chip-program">MS/MBA</span>`
+      : '';
+
+    card.innerHTML = `
+      <div class="card-accent"></div>
+      <div class="card-header">
+        <div class="avatar">${initials(m.name)}</div>
+        <div class="card-name-block">
+          <div class="card-name">${m.name}</div>
+          <div class="card-role"><span class="card-company">${m.company || '—'}</span>${m.role ? ' · ' + m.role : ''}</div>
+        </div>
+      </div>
+      <div class="card-chips">
+        ${m.location ? `<span class="chip chip-loc">📍 ${m.location}</span>` : ''}
+        ${m.function_ ? `<span class="chip chip-industry">${m.function_}</span>` : ''}
+        ${interestChips}
+        ${programBadge}
+      </div>
+      <p class="card-bio">${m.bio}</p>
+      <div class="card-footer">
+        <div class="card-edu">${m.undergrad || ''}</div>
+        ${m.linkedin ? `<a class="linkedin-btn" href="${m.linkedin}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Connect
+        </a>` : ''}
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  updateResultsBar(filtered.length);
+}
+
+function updateResultsBar(n) {
+  const q = document.getElementById('search').value.trim();
+  const fn = document.getElementById('filter-function').value;
+  const fl = document.getElementById('filter-location').value;
+  const fi = document.getElementById('filter-interests').value;
+  const fp = document.getElementById('filter-program').value;
+  const hasFilter = q || fn || fl || fi || fp;
+  const bar = document.getElementById('results-bar');
+  bar.textContent = hasFilter ? `${n} classmate${n !== 1 ? 's' : ''} matched` : '';
+}
+
+// ─────────────────────────────────────────────────────────────
+// MODAL
+// ─────────────────────────────────────────────────────────────
+function openModal(m) {
+  const programLabel = m.program === 'msmba' ? '<span class="chip chip-program" style="font-size:12px">MS/MBA</span>' : '<span class="chip chip-industry" style="font-size:12px">MBA</span>';
+  document.getElementById('modal-header').innerHTML = `
+    <div>
+      <div class="modal-avatar">${initials(m.name)}</div>
+      <div class="modal-name">${m.name}</div>
+      <div class="modal-title">${m.role || ''} ${m.company ? '@ ' + m.company : ''}</div>
+    </div>
+    <button class="modal-close" onclick="closeModal()">✕</button>
+  `;
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-section">
+      <h4>Location</h4>
+      <p class="big">${m.location || '—'} ${m.origin && m.origin !== m.location ? `<span style="color:var(--muted);font-size:13px;font-weight:400">· from ${m.origin}</span>` : ''}</p>
+    </div>
+    ${m.undergrad ? `<div class="modal-section"><h4>Education</h4><p>${m.undergrad}</p></div>` : ''}
+    <div class="modal-section">
+      <h4>Background</h4>
+      <p>${m.bio || '—'}</p>
+    </div>
+    ${m.hobbies ? `<div class="modal-section"><h4>Outside of Work</h4><p>${m.hobbies}</p></div>` : ''}
+    <div class="modal-section">
+      <h4>Tags & Interests</h4>
+      <div class="modal-chips">
+        ${m.function_ ? `<span class="chip chip-industry">${m.function_}</span>` : ''}
+        ${programLabel}
+        ${getInterests(m).map(t => `<span class="chip chip-origin">${t}</span>`).join('')}
+      </div>
+    </div>
+    <div class="modal-actions">
+      ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" rel="noopener" class="btn-linkedin modal-actions">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white" style="margin-right:6px"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        View LinkedIn
+      </a>` : `<span class="btn-secondary" style="flex:1;text-align:center;padding:11px;border-radius:8px;font-size:13px;color:var(--muted)">No LinkedIn provided</span>`}
+    </div>
+  `;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modal-overlay')) return;
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+// ─────────────────────────────────────────────────────────────
+// CONTROLS
+// ─────────────────────────────────────────────────────────────
+function clearFilters() {
+  document.getElementById('search').value = '';
+  document.getElementById('filter-function').value = '';
+  document.getElementById('filter-location').value = '';
+  document.getElementById('filter-interests').value = '';
+  document.getElementById('filter-program').value = '';
+  render();
+}
+
+let currentView = 'grid';
+function setView(v) {
+  currentView = v;
+  const grid = document.getElementById('grid');
+  const btnGrid = document.getElementById('btn-grid');
+  const btnList = document.getElementById('btn-list');
+  if (v === 'list') {
+    grid.classList.add('list-view');
+    btnList.classList.add('active');
+    btnGrid.classList.remove('active');
+  } else {
+    grid.classList.remove('list-view');
+    btnGrid.classList.add('active');
+    btnList.classList.remove('active');
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────────────
+document.getElementById('total-count').textContent = MEMBERS.length;
+populateFilters();
+render();
+
+['search', 'filter-function', 'filter-location', 'filter-interests', 'filter-program'].forEach(id => {
+  document.getElementById(id).addEventListener('input', render);
+  document.getElementById(id).addEventListener('change', render);
+});
+</script>
+</body>
+</html>
